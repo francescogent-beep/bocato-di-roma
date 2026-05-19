@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { GLOVO_URL } from '@/lib/data'
 
 export function Footer() {
@@ -9,9 +10,13 @@ export function Footer() {
 
         {/* Brand */}
         <div>
-          <h2 className="font-stencil text-[#FEB428] text-xl mb-3 uppercase tracking-wide">
-            Bocato di Roma
-          </h2>
+          <Image
+            src="/one-line-yellow-bocato-di-roma-logo.svg"
+            alt="Bocato di Roma"
+            width={200}
+            height={69}
+            className="mb-3"
+          />
           <p className="text-white/70 text-sm leading-relaxed mb-3">
             Street food napoletano en el corazón de Murcia. Masa fermentada 24h, ingredientes DOP e IGP.
           </p>

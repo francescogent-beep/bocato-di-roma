@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
+import { BIZ_UDGothic } from 'next/font/google'
 import '../styles/globals.css'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
 import { Marquee } from '@/components/Marquee'
 import { FloatingOrder } from '@/components/FloatingOrder'
 import { getRestaurantSchema, getWebSiteSchema } from '@/lib/schema'
+
+const bizUDGothic = BIZ_UDGothic({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-gothic',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bocatodiroma.com'),
@@ -73,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={bizUDGothic.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

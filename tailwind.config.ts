@@ -18,7 +18,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        gothic: ['"BIZ UDGothic"', 'sans-serif'],
+        gothic: ['var(--font-gothic)', 'sans-serif'],
         mincho: ['"BIZ UDMincho"', 'serif'],
         stencil: ['"Big Shoulders Stencil Display"', 'sans-serif'],
       },
