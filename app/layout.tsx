@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Bocato di Roma',
   },
   description:
-    'El mejor bocato napoletano en Murcia. Masa fermentada 24h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A. ¡Veni Vidi y Comí!',
+    'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A. ¡Veni Vidi y Comí!',
   keywords: [
     'bocato napoletano murcia',
     'comida italiana murcia',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Bocato di Roma',
     title: 'Bocato di Roma | Bocatos Napoletanos en Murcia',
     description:
-      'El mejor bocato napoletano en Murcia. Masa fermentada 24h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A.',
+      'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A.',
     images: [
       {
         url: '/logo.png',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bocato di Roma | Bocatos Napoletanos en Murcia',
     description:
-      'El mejor bocato napoletano en Murcia. Masa fermentada 24h, ingredientes italianos DOP e IGP.',
+      'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP.',
     images: ['/logo.png'],
   },
   alternates: {

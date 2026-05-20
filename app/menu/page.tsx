@@ -49,7 +49,7 @@ export default function MenuPage() {
               LA CARTA
             </h1>
             <p className="text-white/70 uppercase tracking-widest text-sm mt-2">
-              Masa fermentada 24h · Ingredientes DOP e IGP
+              Masa fermentada mínimo 72h · Ingredientes DOP e IGP
             </p>
             <div className="ornament-divider mt-4 text-lg" />
           </div>

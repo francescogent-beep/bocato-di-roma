@@ -11,7 +11,7 @@ import { foodImages } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Nosotros — Bocato di Roma Murcia | La Historia Detrás del Bocato',
   description:
-    'Conoce la historia de Bocato di Roma: el amor por las calles de Nápoles, los ingredientes DOP e IGP y el espíritu de calle que llegó al centro de Murcia.',
+    'Conoce la historia de Bocato di Roma: el amor por las calles de Roma, los ingredientes DOP e IGP y el espíritu de calle que llegó al centro de Murcia.',
   alternates: {
     canonical: 'https://bocatodiroma.com/nosotros',
   },
@@ -25,8 +25,8 @@ const VALUES = [
   },
   {
     icon: '⏱️',
-    title: 'Fermentación 24 Horas',
-    body: 'La masa no se puede acelerar. 24 horas de fermentación, punto. Si no está lista, no sale. Si sale, está brutal.',
+    title: 'Fermentación Mínimo 72 Horas',
+    body: 'La masa no se puede acelerar. Mínimo 72 horas de fermentación, punto. Si no está lista, no sale. Si sale, está brutal.',
   },
   {
     icon: '🔥',
@@ -36,7 +36,7 @@ const VALUES = [
   {
     icon: '🛵',
     title: 'Espíritu de Calle',
-    body: 'Bocato di Roma no es un restaurante fino. Es una esquina de Nápoles en el centro de Murcia. Ven, come de pie, mancha la camisa, vuelve.',
+    body: 'Bocato di Roma no es un restaurante fino. Es una esquina de Roma en el centro de Murcia. Ven, come de pie, mancha la camisa, vuelve.',
   },
 ]
 
@@ -78,7 +78,7 @@ export default function NosotrosPage() {
             className="font-stencil text-white leading-none mb-6"
             style={{ fontSize: 'clamp(2.8rem, 9vw, 7rem)', textShadow: '4px 4px 0px rgba(0,0,0,0.4)' }}
           >
-            NAPOLI ×<br />MURCIA
+            ROMA ×<br />MURCIA
           </h1>
           <div className="checker-tape mb-6 max-w-md mx-auto" />
           <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
@@ -182,17 +182,17 @@ export default function NosotrosPage() {
                   </h2>
                   <div className="checker-tape mb-6" />
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
-                    Todo empezó en una calle estrecha de Nápoles, tarde de verano, olor a pan recién horneado
+                    Todo empezó en una calle estrecha de Roma, tarde de verano, olor a pan recién horneado
                     saliendo de un tugurio del tamaño de un baño. Ahí estaba el bocato. No en un restaurante
                     con mantel y carta laminada — en la calle, con los dedos, de pie.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
                     La obsesión por replicar eso fue lo que trajo Bocato di Roma a Murcia en 2025.
                     Un local pequeño, sin artificios, donde la estrella es el producto: masa fermentada
-                    24 horas, ingredientes italianos con denominación de origen, horno al momento.
+                    mínimo 72 horas, ingredientes italianos con denominación de origen, horno al momento.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-6">
-                    Murcia puso la energía, la huerta y las ganas. Nápoles puso la receta, los productos
+                    Murcia puso la energía, la huerta y las ganas. Roma puso la receta, los productos
                     y esa actitud de que la comida buena no necesita excusas.
                   </p>
                   <div className="ornament-divider mb-4" />
@@ -297,7 +297,7 @@ export default function NosotrosPage() {
               </h2>
               <div className="checker-tape mb-4" />
               <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
-                El bocato es napolitano, pero Murcia tiene productos que dan envidia a media Italia.
+                El bocato es romano, pero Murcia tiene productos que dan envidia a media Italia.
                 Por eso creamos la sección Murcia Style: bocatos que combinan la masa italiana con
                 productos murcianos de primera.
               </p>

@@ -4,7 +4,7 @@ export function getRestaurantSchema() {
     '@type': ['Restaurant', 'FoodEstablishment'],
     name: 'Bocato di Roma',
     description:
-      'Restaurante de bocatos napoletanos artesanales en el centro de Murcia. Masa fermentada 24h con ingredientes DOP y IGP italianos.',
+      'Restaurante de bocatos napoletanos artesanales en el centro de Murcia. Masa fermentada mínimo 72h con ingredientes DOP y IGP italianos.',
     url: 'https://bocatodiroma.com',
     telephone: '+34652473345',
     address: {
@@ -151,7 +151,7 @@ export function getMenuSchema() {
     hasMenuSection: [
       {
         '@type': 'MenuSection',
-        name: 'Bocatos Napoletanos',
+        name: 'Bocatos Romanos',
         hasMenuItem: [
           { '@type': 'MenuItem', name: 'Imperfecto', offers: { '@type': 'Offer', price: '9.00', priceCurrency: 'EUR' } },
           { '@type': 'MenuItem', name: 'Carbonara', offers: { '@type': 'Offer', price: '7.90', priceCurrency: 'EUR' } },
@@ -194,10 +194,10 @@ export function getFAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: '¿Qué es un bocato napoletano?',
+        name: '¿Qué es un bocato romano?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'El bocato napoletano es un pan redondo de masa fermentada durante 24 horas, horneado al momento en horno a alta temperatura y relleno con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP).',
+          text: 'El bocato romano es un pan redondo de origen romano, con masa fermentada durante un mínimo de 72 horas al estilo napoletano, horneado al momento en horno a alta temperatura y relleno con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP).',
         },
       },
       {

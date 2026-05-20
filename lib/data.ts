@@ -146,7 +146,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'bocatos',
     title: 'Bocatos',
-    subtitle: 'Pan fermentado 24h, horneado al momento',
+    subtitle: 'Pan fermentado mínimo 72h, horneado al momento',
     items: bocatos,
   },
   {

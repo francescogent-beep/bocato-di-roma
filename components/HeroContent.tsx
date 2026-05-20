@@ -10,7 +10,7 @@ export function HeroContent() {
     <section
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
       style={{ backgroundColor: '#9F1429' }}
-      aria-label="Bocato di Roma — Bocatos Napoletanos en Murcia"
+      aria-label="Bocato di Roma — Street Food Italiano en Murcia"
     >
       <HeroBackground />
       {/* Dark overlay to ensure readability */}
@@ -18,6 +18,18 @@ export function HeroContent() {
 
       {/* Main content */}
       <div className="relative text-center max-w-2xl w-full" style={{ zIndex: 10 }}>
+        {/* Tagline sticker — top, before logo */}
+        <motion.div
+          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: -2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
+          className="inline-block bg-[#361E1E] px-6 py-2 mb-6"
+        >
+          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
+            Veni Vidi y Comí
+          </span>
+        </motion.div>
+
         {/* Logo — big, no text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
@@ -47,18 +59,6 @@ export function HeroContent() {
           />
         </motion.div>
 
-        {/* Tagline — animated badge */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: -2, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, type: 'spring', bounce: 0.4 }}
-          className="inline-block bg-[#361E1E] px-6 py-2 mb-8"
-        >
-          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
-            Veni Vidi y Comí
-          </span>
-        </motion.div>
-
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -66,7 +66,7 @@ export function HeroContent() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-white/80 text-base md:text-lg uppercase tracking-[0.2em] font-bold mb-8"
         >
-          Street food napoletano · Murcia
+          Street food italiano · Murcia
         </motion.p>
 
         {/* CTAs */}

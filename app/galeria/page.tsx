@@ -16,7 +16,7 @@ const imageCaptions = [
   'Bocato Napoletano',
   'Hecho al Momento',
   'Ingredientes DOP',
-  'Masa Fermentada 24h',
+  'Masa Fermentada Mínimo 72h',
   'Street Food Italiano',
   'Bocato di Roma',
   'Sabor de Italia',

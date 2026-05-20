@@ -1,7 +1,7 @@
 export async function GET() {
   const content = `# Bocato di Roma
 
-> Restaurante de bocatos napoletanos artesanales en Murcia, España. Street food italiano con masa fermentada 24 horas.
+> Restaurante de bocatos napoletanos artesanales en Murcia, España. Street food italiano con masa fermentada mínimo 72 horas.
 
 ## Información del Negocio
 - **Dirección:** Gran Vía Alfonso X el Sabio, 2-A, 30008 Murcia, España
@@ -10,7 +10,7 @@ export async function GET() {
 - **Cierra:** Lunes
 
 ## Lo que somos
-Bocato di Roma es un local de street food italiano en el centro de Murcia. Nuestro producto estrella es el bocato napoletano: un pan redondo de masa fermentada 24 horas, horneado al momento, relleno con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP).
+Bocato di Roma es un local de street food italiano en el centro de Murcia. Nuestro producto estrella es el bocato napoletano: un pan redondo de masa fermentada mínimo 72 horas, horneado al momento, relleno con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP).
 
 ## Nuestros Bocatos
 - Imperfecto (9€) — Tomate San Marzano DOP, mortadela de Bologna IGP, mozzarella di bufala Campana DOP, pistacho, rúcula, parmesano y pesto.

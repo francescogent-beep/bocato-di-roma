@@ -60,12 +60,12 @@ export default function HomePage() {
                     id="bocato-heading"
                     className="font-stencil text-[#361E1E] text-3xl md:text-4xl mb-4 leading-tight"
                   >
-                    MASA FERMENTADA 24H
+                    MASA FERMENTADA MÍNIMO 72H
                   </h2>
                   <div className="checker-tape mb-4" />
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
-                    Llevamos el alma de las calles romanas a Murcia. El bocato napoletano es un pan redondo,
-                    de masa fermentada durante 24 horas, horneado al momento y relleno con lo mejor de Italia.
+                    Llevamos el alma de las calles romanas a Murcia. El bocato romano es un pan redondo,
+                    de masa fermentada durante un mínimo de 72 horas al estilo napoletano, horneado al momento y relleno con lo mejor de Italia.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-6">
                     Ingredientes con denominación de origen protegida (DOP) e indicación geográfica protegida (IGP):
@@ -83,13 +83,13 @@ export default function HomePage() {
                     style={{ transform: 'rotate(-8deg)' }}
                     aria-hidden="true"
                   >
-                    <ItalianBadge line1="NAPOLI x" line2="MURCIA" line3="EST. 2025" size={75} />
+                    <ItalianBadge line1="ROMA x" line2="MURCIA" line3="EST. 2025" size={75} />
                   </div>
 
                   <div className="relative h-72 md:h-96 overflow-hidden" style={{ transform: 'rotate(1deg)' }}>
                     <Image
                       src="/images/unnamed.webp"
-                      alt="Bocato napoletano de Bocato di Roma — masa fermentada 24 horas"
+                      alt="Bocato romano de Bocato di Roma — masa fermentada mínimo 72 horas"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -145,7 +145,7 @@ export default function HomePage() {
           style={{ transform: 'rotate(-10deg)', color: '#FEB428' }}
           aria-hidden="true"
         >
-          <StampSeal text="ARTESANAL" subtext="24H FERMENTO" size={85} />
+          <StampSeal text="ARTESANAL" subtext="72H FERMENTO" size={85} />
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -159,7 +159,7 @@ export default function HomePage() {
                 LA CARTA
               </h2>
               <p className="text-white/60 uppercase tracking-widest text-xs">
-                Bocatos napoletanos artesanales · Ingredientes DOP e IGP
+                Bocatos romanos artesanales · Ingredientes DOP e IGP
               </p>
               <div className="ornament-divider mt-3" />
             </div>
@@ -312,16 +312,16 @@ export default function HomePage() {
                 id="nosotros-heading"
                 className="font-stencil text-white text-3xl md:text-4xl mb-4 leading-tight"
               >
-                NAPOLI EN EL CORAZÓN,<br />MURCIA EN EL ALMA
+                ROMA EN EL CORAZÓN,<br />MURCIA EN EL ALMA
               </h2>
               <div className="checker-tape mb-4" />
               <p className="text-white/80 text-base leading-relaxed mb-4">
-                Bocato di Roma nació del amor por las calles de Nápoles y la pasión por los productos
+                Bocato di Roma nació del amor por las calles de Roma y la pasión por los productos
                 italianos auténticos. Cada bocato es una ventana a esas noches en las que el mejor
                 plan era parar en la esquina y comer algo brutal.
               </p>
               <p className="text-white/80 text-base leading-relaxed mb-6">
-                Ingredientes DOP e IGP, masa fermentada 24 horas, horno a tope. Sin atajos. Sin trampa.
+                Ingredientes DOP e IGP, masa fermentada mínimo 72 horas, horno a tope. Sin atajos. Sin trampa.
                 Solo producto italiano de verdad, con actitud de calle.
               </p>
               <div className="ornament-divider mb-6" />
@@ -503,8 +503,8 @@ export default function HomePage() {
             <div className="space-y-3">
               {[
                 {
-                  q: '¿Qué es un bocato napoletano?',
-                  a: 'El bocato napoletano es un pan redondo de masa fermentada durante 24 horas, horneado al momento en horno a alta temperatura. Se rellena con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP). Piensa en una focaccia de barrio con alma de calle.',
+                  q: '¿Qué es un bocato romano?',
+                  a: 'El bocato romano es un pan redondo de origen romano, con masa fermentada durante un mínimo de 72 horas al estilo napoletano, horneado al momento en horno a alta temperatura. Se rellena con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP). Piensa en una focaccia de barrio con alma de calle.',
                 },
                 {
                   q: '¿Hay opciones sin gluten o vegetarianas?',

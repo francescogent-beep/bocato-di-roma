@@ -9,7 +9,7 @@ const TICKER_ITEMS = [
   '◆',
   'ACHO CHE BELLO',
   '◆',
-  'MASA FERMENTADA 24H',
+  'MASA FERMENTADA 72H',
   '◆',
   'DIME DE QUÉ PASTA ESTÁS HECHO',
   '◆',
