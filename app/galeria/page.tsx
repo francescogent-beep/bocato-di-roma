@@ -6,14 +6,14 @@ import { foodImages } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Galería',
   description:
-    'Imágenes de Bocato di Roma Murcia. Bocatos napoletanos artesanales, ambiente del local y nuestros ingredientes.',
+    'Imágenes de Bocato di Roma Murcia. Bocatos romanos artesanales, ambiente del local y nuestros ingredientes.',
   alternates: {
     canonical: 'https://bocatodiroma.com/galeria',
   },
 }
 
 const imageCaptions = [
-  'Bocato Napoletano',
+  'Bocato Romano',
   'Hecho al Momento',
   'Ingredientes DOP',
   'Masa Fermentada Mínimo 72h',

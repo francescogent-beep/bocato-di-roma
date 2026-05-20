@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Bocato di Roma — Bocatos Napoletanos en Murcia'
+export const alt = 'Bocato di Roma — Bocatos Romanos en Murcia'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -44,7 +44,7 @@ export default async function OGImage() {
 
         {/* Subtitle */}
         <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: 28, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 32 }}>
-          Street Food Napoletano · Murcia
+          Street Food Romano · Murcia
         </div>
 
         {/* Diamond divider */}

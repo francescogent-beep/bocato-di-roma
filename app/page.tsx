@@ -65,7 +65,7 @@ export default function HomePage() {
                   <div className="checker-tape mb-4" />
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
                     Llevamos el alma de las calles romanas a Murcia. El bocato romano es un pan redondo,
-                    de masa fermentada durante un mínimo de 72 horas al estilo napoletano, horneado al momento y relleno con lo mejor de Italia.
+                    de masa fermentada durante un mínimo de 72 horas al estilo romano, horneado al momento y relleno con lo mejor de Italia.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-6">
                     Ingredientes con denominación de origen protegida (DOP) e indicación geográfica protegida (IGP):
@@ -504,7 +504,7 @@ export default function HomePage() {
               {[
                 {
                   q: '¿Qué es un bocato romano?',
-                  a: 'El bocato romano es un pan redondo de origen romano, con masa fermentada durante un mínimo de 72 horas al estilo napoletano, horneado al momento en horno a alta temperatura. Se rellena con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP). Piensa en una focaccia de barrio con alma de calle.',
+                  a: 'El bocato romano es un pan redondo de origen romano, con masa fermentada durante un mínimo de 72 horas al estilo romano, horneado al momento en horno a alta temperatura. Se rellena con ingredientes italianos de denominación de origen protegida (DOP) e indicación geográfica protegida (IGP). Piensa en una focaccia de barrio con alma de calle.',
                 },
                 {
                   q: '¿Hay opciones sin gluten o vegetarianas?',

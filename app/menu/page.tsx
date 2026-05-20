@@ -9,7 +9,7 @@ import MenuTabs from './MenuTabs'
 export const metadata: Metadata = {
   title: 'La Carta',
   description:
-    'Carta completa de Bocato di Roma Murcia: Imperfecto, Carbonara, Tartufato, Sorrento... Bocatos napoletanos artesanales con ingredientes DOP e IGP. También Murcia Style con productos locales.',
+    'Carta completa de Bocato di Roma Murcia: Imperfecto, Carbonara, Tartufato, Sorrento... Bocatos romanos artesanales con ingredientes DOP e IGP. También Murcia Style con productos locales.',
   alternates: {
     canonical: 'https://bocatodiroma.com/menu',
   },

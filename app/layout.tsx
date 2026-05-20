@@ -17,13 +17,13 @@ const bizUDGothic = BIZ_UDGothic({
 export const metadata: Metadata = {
   metadataBase: new URL('https://bocatodiroma.com'),
   title: {
-    default: 'Bocato di Roma | Bocatos Napoletanos en Murcia',
+    default: 'Bocato di Roma | Bocatos Romanos en Murcia',
     template: '%s | Bocato di Roma',
   },
   description:
-    'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A. ¡Veni Vidi y Comí!',
+    'El mejor bocato romano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A. ¡Veni Vidi y Comí!',
   keywords: [
-    'bocato napoletano murcia',
+    'bocato romano murcia',
     'comida italiana murcia',
     'street food murcia',
     'pizzeta murcia',
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://bocatodiroma.com',
     siteName: 'Bocato di Roma',
-    title: 'Bocato di Roma | Bocatos Napoletanos en Murcia',
+    title: 'Bocato di Roma | Bocatos Romanos en Murcia',
     description:
-      'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A.',
+      'El mejor bocato romano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP. En Gran Vía Alfonso X, 2-A.',
     images: [
       {
         url: '/logo.png',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bocato di Roma | Bocatos Napoletanos en Murcia',
+    title: 'Bocato di Roma | Bocatos Romanos en Murcia',
     description:
-      'El mejor bocato napoletano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP.',
+      'El mejor bocato romano en Murcia. Masa fermentada mínimo 72h, ingredientes italianos DOP e IGP.',
     images: ['/logo.png'],
   },
   alternates: {

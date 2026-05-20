@@ -18,7 +18,7 @@ export function Footer() {
             className="mb-3"
           />
           <p className="text-white/70 text-sm leading-relaxed mb-3">
-            Street food napoletano en el corazón de Murcia. Masa fermentada mínimo 72h, ingredientes DOP e IGP.
+            Street food romano en el corazón de Murcia. Masa fermentada mínimo 72h, ingredientes DOP e IGP.
           </p>
           <p className="text-[#FEB428] text-sm font-bold italic uppercase tracking-wider">
             "Veni Vidi y Comí"
