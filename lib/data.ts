@@ -75,6 +75,12 @@ export const bocatos: MenuItem[] = [
     description: 'Crema de ricotta y albahaca, tomate semiseco, mozzarella di Bufala Campana DOP, olivas leccino, alcaparras y ralladura de limón.',
     vegetarian: true,
   },
+  {
+    name: '4 Formaggi',
+    price: '7,90€',
+    description: 'Tomate San Marzano, fior di latte, taleggio, gorgonzola y parmesano.',
+    vegetarian: true,
+  },
 ]
 
 // MURCIA STYLE

@@ -162,6 +162,7 @@ export function getMenuSchema() {
           { '@type': 'MenuItem', name: 'Diavolo', offers: { '@type': 'Offer', price: '7.00', priceCurrency: 'EUR' } },
           { '@type': 'MenuItem', name: 'Capitano', offers: { '@type': 'Offer', price: '7.00', priceCurrency: 'EUR' } },
           { '@type': 'MenuItem', name: 'Sorrento', offers: { '@type': 'Offer', price: '7.90', priceCurrency: 'EUR' } },
+          { '@type': 'MenuItem', name: '4 Formaggi', offers: { '@type': 'Offer', price: '7.90', priceCurrency: 'EUR' } },
         ],
       },
       {
