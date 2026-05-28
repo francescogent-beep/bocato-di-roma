@@ -474,14 +474,26 @@ export function HeroContent() {
       </div>
 
       {/* Main content */}
-      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-20 md:pb-0" style={{ zIndex: 10 }}>
+      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-32 md:pb-0" style={{ zIndex: 10 }}>
+
+        {/* Tagline — desktop only: above logo */}
+        <motion.div
+          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: -2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
+          className="hidden md:inline-block bg-[#361E1E] px-6 py-2 mb-6"
+        >
+          <span className="text-[#FEB428] font-stencil text-2xl uppercase tracking-wider">
+            Veni Vidi y Comí
+          </span>
+        </motion.div>
 
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 mb-2 md:mt-0 md:mb-8"
+          className="mt-16 mb-1 md:mt-0 md:mb-8"
         >
           <Image
             src="/logo-bocato-di-roma-yellow.svg"
@@ -503,14 +515,14 @@ export function HeroContent() {
           />
         </motion.div>
 
-        {/* Tagline sticker — below logo */}
+        {/* Tagline — mobile only: below logo */}
         <motion.div
           initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
           animate={{ opacity: 1, rotate: -2, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
-          className="inline-block bg-[#361E1E] px-4 py-1.5 mb-9 md:mb-6 md:px-6 md:py-2"
+          className="inline-block md:hidden bg-[#361E1E] px-4 py-1.5 mb-9"
         >
-          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
+          <span className="text-[#FEB428] font-stencil text-xl uppercase tracking-wider">
             Veni Vidi y Comí
           </span>
         </motion.div>
