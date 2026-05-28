@@ -348,19 +348,20 @@ export function HeroContent() {
       {/* Dark overlay to ensure readability */}
 
       {/* Tagline — pinned to top of hero, both mobile and desktop */}
-      <motion.div
-        initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
-        animate={{ opacity: 1, rotate: -2, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
-        style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%) rotate(-2deg)', zIndex: 10, whiteSpace: 'nowrap' }}
-      >
-        <div className="bg-[#361E1E] px-4 py-1.5 md:px-6 md:py-2">
-          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
-            Veni Vidi y Comí
-          </span>
-        </div>
-      </motion.div>
-      <div className="absolute inset-0 bg-[#9F1429]/50" style={{ zIndex: 2 }} />
+      <div style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 10, whiteSpace: 'nowrap' }}>
+        <motion.div
+          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: -2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
+        >
+          <div className="bg-[#361E1E] px-4 py-1.5 md:px-6 md:py-2">
+            <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
+              Veni Vidi y Comí
+            </span>
+          </div>
+        </motion.div>
+      </div>
+      <div className="absolute inset-0 bg-[#9F1429]/60" style={{ zIndex: 2 }} />
 
       {/* Ricotta — desktop: bottom left, same layer as Miguelico */}
       <div
@@ -488,7 +489,7 @@ export function HeroContent() {
       </div>
 
       {/* Main content */}
-      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-32 md:pb-0" style={{ zIndex: 10 }}>
+      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-44 md:pb-0" style={{ zIndex: 10 }}>
 
         {/* Logo */}
         <motion.div
