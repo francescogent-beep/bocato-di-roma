@@ -346,6 +346,20 @@ export function HeroContent() {
     >
       <HeroBackground />
       {/* Dark overlay to ensure readability */}
+
+      {/* Tagline — pinned to top of hero, both mobile and desktop */}
+      <motion.div
+        initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
+        animate={{ opacity: 1, rotate: -2, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
+        style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%) rotate(-2deg)', zIndex: 10, whiteSpace: 'nowrap' }}
+      >
+        <div className="bg-[#361E1E] px-4 py-1.5 md:px-6 md:py-2">
+          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
+            Veni Vidi y Comí
+          </span>
+        </div>
+      </motion.div>
       <div className="absolute inset-0 bg-[#9F1429]/50" style={{ zIndex: 2 }} />
 
       {/* Ricotta — desktop: bottom left, same layer as Miguelico */}
@@ -476,18 +490,6 @@ export function HeroContent() {
       {/* Main content */}
       <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-32 md:pb-0" style={{ zIndex: 10 }}>
 
-        {/* Tagline — desktop only: above logo */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: -2, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
-          className="hidden md:inline-block bg-[#361E1E] px-6 py-2 mb-6"
-        >
-          <span className="text-[#FEB428] font-stencil text-2xl uppercase tracking-wider">
-            Veni Vidi y Comí
-          </span>
-        </motion.div>
-
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
@@ -515,17 +517,6 @@ export function HeroContent() {
           />
         </motion.div>
 
-        {/* Tagline — mobile only: below logo */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: -2, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
-          className="inline-block md:hidden bg-[#361E1E] px-4 py-1.5 mb-9"
-        >
-          <span className="text-[#FEB428] font-stencil text-xl uppercase tracking-wider">
-            Veni Vidi y Comí
-          </span>
-        </motion.div>
 
         {/* Subtitle */}
         <motion.p
