@@ -127,9 +127,8 @@ function TextSticker({ label, width, rotation }: { label: string; width: number;
 function StickerPNG({ src, width, rotation }: { src: string; width: number; rotation: number }) {
   return (
     <div style={{ transform: `rotate(${rotation}deg)`, width, opacity: 1, boxShadow: '2px 4px 18px rgba(0,0,0,0.5)' }}>
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4', overflow: 'hidden' }}>
-        <Image src={`/stickers/${src}`} alt="Bocato di Roma sticker" fill style={{ objectFit: 'cover' }} sizes="100px" />
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={`/stickers/${src}`} alt="" width={width} style={{ display: 'block', width: '100%', height: 'auto' }} />
     </div>
   )
 }
