@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,6 +23,7 @@
   --beige: #F4E6CE;
   --dark: #361E1E;
   --cream: #FAF3E5;
+  --font-stencil: 'Big Shoulders Stencil Display';
 }
 
 * {
@@ -108,9 +107,24 @@ body {
 
 /* Headline stencil font */
 .font-stencil {
-  font-family: 'Big Shoulders Stencil Display', sans-serif;
+  font-family: var(--font-stencil), sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+}
+
+/* Graffiti / spray-paint font — Permanent Marker */
+.font-graffiti {
+  font-family: 'Permanent Marker', var(--font-stencil), cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+/* Hollow outline text — spray-tag style */
+.text-hollow {
+  -webkit-text-stroke: 2px currentColor;
+  color: transparent !important;
+  opacity: 0.22;
 }
 
 /* Section divider diamond ornament */
@@ -221,3 +235,31 @@ body {
   0%   { transform: scale(1); opacity: 0.4; }
   100% { transform: scale(1.6); opacity: 0; }
 }
+
+/* Clothesline hanging item sway */
+@keyframes sway-a {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+@keyframes sway-b {
+  0%, 100% { transform: rotate(1.5deg); }
+  50%       { transform: rotate(-2.5deg); }
+}
+@keyframes sway-c {
+  0%, 100% { transform: rotate(-1deg); }
+  50%       { transform: rotate(2deg); }
+}
+@keyframes sway-d {
+  0%, 100% { transform: rotate(2.5deg); }
+  50%       { transform: rotate(-1.5deg); }
+}
+@keyframes sway-e {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(1deg); }
+}
+
+.sway-a { transform-origin: top center; animation: sway-a 3.8s ease-in-out infinite; }
+.sway-b { transform-origin: top center; animation: sway-b 4.5s ease-in-out infinite 0.6s; }
+.sway-c { transform-origin: top center; animation: sway-c 3.2s ease-in-out infinite 1.4s; }
+.sway-d { transform-origin: top center; animation: sway-d 4.1s ease-in-out infinite 0.9s; }
+.sway-e { transform-origin: top center; animation: sway-e 3.6s ease-in-out infinite 2.1s; }
