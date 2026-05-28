@@ -340,7 +340,7 @@ const LAUNDRY = [
 export function HeroContent() {
   return (
     <section
-      className="relative min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
       style={{ backgroundColor: '#9F1429' }}
       aria-label="Bocato di Roma — Street Food Italiano en Murcia"
     >
@@ -387,7 +387,7 @@ export function HeroContent() {
           position: 'absolute',
           bottom: 0,
           left: '4%',
-          height: '16%',
+          height: '24%',
           width: 'auto',
           zIndex: 6,
           pointerEvents: 'none',
@@ -474,25 +474,14 @@ export function HeroContent() {
       </div>
 
       {/* Main content */}
-      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0" style={{ zIndex: 10 }}>
-        {/* Tagline sticker */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: -2, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
-          className="inline-block bg-[#361E1E] px-4 py-1.5 mb-4 md:mb-6 md:px-6 md:py-2"
-        >
-          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
-            Veni Vidi y Comí
-          </span>
-        </motion.div>
+      <div className="relative text-center max-w-2xl w-full mt-16 md:mt-0 pb-20 md:pb-0" style={{ zIndex: 10 }}>
 
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-4 md:mb-8"
+          className="mt-6 mb-6 md:mt-0 md:mb-8"
         >
           <Image
             src="/logo-bocato-di-roma-yellow.svg"
@@ -514,12 +503,24 @@ export function HeroContent() {
           />
         </motion.div>
 
+        {/* Tagline sticker — below logo */}
+        <motion.div
+          initial={{ opacity: 0, rotate: -5, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: -2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3, type: 'spring', bounce: 0.4 }}
+          className="inline-block bg-[#361E1E] px-4 py-1.5 mb-5 md:mb-6 md:px-6 md:py-2"
+        >
+          <span className="text-[#FEB428] font-stencil text-xl md:text-2xl uppercase tracking-wider">
+            Veni Vidi y Comí
+          </span>
+        </motion.div>
+
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-white/80 text-sm md:text-lg uppercase tracking-[0.1em] md:tracking-[0.2em] font-bold mb-6 md:mb-8 px-2"
+          className="text-white/80 text-sm md:text-lg uppercase tracking-[0.1em] md:tracking-[0.2em] font-bold mb-8 md:mb-8 px-2"
         >
           De las calles del Trastevere a Murcia
         </motion.p>
