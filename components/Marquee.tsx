@@ -30,6 +30,8 @@ export function Marquee({ bgColor = '#361E1E', textColor = '#FEB428' }: { bgColo
         style={{
           animation: 'marquee 30s linear infinite',
           width: 'max-content',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       >
         {items.map((item, i) => (

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { MenuSection } from '@/components/MenuSection'
 import { FadeUp } from '@/components/FadeUp'
 import { ItalianBadge } from '@/components/Stickers'
-import { menuCategories, GLOVO_URL } from '@/lib/data'
+import { menuCategories } from '@/lib/data'
 import { getMenuSchema } from '@/lib/schema'
 import MenuTabs from './MenuTabs'
+import { BocatoCarousel } from '@/components/BocatoCarousel'
 
 export const metadata: Metadata = {
   title: 'La Carta',
@@ -49,7 +50,7 @@ export default function MenuPage() {
               LA CARTA
             </h1>
             <p className="text-white/70 uppercase tracking-widest text-sm mt-2">
-              Masa fermentada mínimo 72h · Ingredientes DOP e IGP
+              Masa napolitana auténtica · Mínimo 72h · Horno napolitano · Ingredientes DOP e IGP
             </p>
             <div className="ornament-divider mt-4 text-lg" />
           </div>
@@ -63,29 +64,34 @@ export default function MenuPage() {
       <div className="bg-[#F4E6CE] px-6 py-12">
         <div className="max-w-5xl mx-auto">
           {menuCategories.map((category) => (
-            <MenuSection key={category.id} category={category} />
+            <div key={category.id}>
+              <MenuSection category={category} />
+              {category.id === 'bocatos' && (
+                <div className="-mx-6">
+                  <BocatoCarousel />
+                </div>
+              )}
+              {category.id === 'bebidas' && (
+                <div className="flex justify-center mt-4 mb-2 -mx-6 overflow-hidden">
+                  <img
+                    src="/stickers/spellegrino.png"
+                    alt="San Pellegrino"
+                    style={{ width: '100%', maxWidth: 480, display: 'block', objectFit: 'contain' }}
+                    loading="lazy"
+                  />
+                </div>
+              )}
+            </div>
           ))}
 
           {/* Allergen note */}
           <div className="mt-8 p-4 border border-[#9F1429]/30 bg-white/50">
             <p className="text-[#361E1E]/60 text-xs leading-relaxed">
-              🌿 Vegetariano · 🌶️ Picante · Infórmenos de cualquier alergia o intolerancia. Algunos productos 
-              pueden contener trazas de gluten, lácteos, huevo, frutos secos y otros alérgenos.
+              🌿 Vegetariano · 🌿🥛 Vegano (con queso vegano) · 🌶️ Picante · Sin gluten disponible con previo aviso.
+              Infórmenos de cualquier alergia o intolerancia. Algunos productos pueden contener trazas de gluten, lácteos, huevo, frutos secos y otros alérgenos.
             </p>
           </div>
         </div>
-      </div>
-
-      {/* Mobile sticky Glovo bar */}
-      <div className="fixed bottom-0 left-0 right-0 md:hidden bg-[#FEB428] z-40 shadow-lg">
-        <a
-          href={GLOVO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 py-4 text-[#361E1E] font-bold uppercase tracking-widest text-sm"
-        >
-          Pide también en Glovo →
-        </a>
       </div>
     </>
   )

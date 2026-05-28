@@ -22,6 +22,7 @@ Bocato di Roma es un local de street food italiano en el centro de Murcia. Nuest
 - Diavolo (7€) — Picante. Salsa de tomate, nduja Calabrese, spianata Calabrese, queso taleggio y miel picante.
 - Capitano (7€) — Prosciutto cotto y caciocavallo.
 - Sorrento (7,90€) — Vegetariano. Crema de ricotta y albahaca, tomate semiseco, mozzarella di Bufala Campana DOP, olivas leccino, alcaparras y ralladura de limón.
+- 4 Formaggi (7,90€) — Vegetariano. Tomate San Marzano, fior di latte, taleggio, gorgonzola y parmesano.
 
 ## Bocatos Murcia Style (con productos murcianos)
 - El Chato (7€) — Crema de queso fresco de cabra El Roano, queso azul El Roano, salchicha fina de Chato Murciano y almendra picada.

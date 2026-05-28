@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { GLOVO_URL } from '@/lib/data'
+// import { GLOVO_URL } from '@/lib/data' // re-enable when Glovo goes live
 
 export function Nav() {
   const [open, setOpen] = useState(false)

@@ -5,8 +5,6 @@ import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
 import { Marquee } from '@/components/Marquee'
 import { FloatingOrder } from '@/components/FloatingOrder'
-import { SmoothScroll } from '@/components/SmoothScroll'
-import { MobileStickyBar } from '@/components/MobileStickyBar'
 import { getRestaurantSchema, getWebSiteSchema } from '@/lib/schema'
 
 const bizUDGothic = BIZ_UDGothic({
@@ -89,7 +87,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;700;900&family=Permanent+Marker&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
       </head>
@@ -106,14 +104,11 @@ export default function RootLayout({
             __html: JSON.stringify(getWebSiteSchema()),
           }}
         />
-        <SmoothScroll>
-          <Nav />
-          <Marquee bgColor="#361E1E" textColor="#FEB428" />
-          <main className="pt-[68px]">{children}</main>
-          <Footer />
-          <FloatingOrder />
-          <MobileStickyBar />
-        </SmoothScroll>
+        <Nav />
+        <Marquee bgColor="#361E1E" textColor="#FEB428" />
+        <main className="pt-[68px]">{children}</main>
+        <Footer />
+        <FloatingOrder />
       </body>
     </html>
   )

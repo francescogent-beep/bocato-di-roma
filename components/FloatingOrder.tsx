@@ -1,4 +1,13 @@
 'use client'
+
+// Glovo floating button — hidden until delivery is enabled
+// To re-enable: uncomment the full component below and remove the null export
+
+export function FloatingOrder() {
+  return null
+}
+
+/*
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { GLOVO_URL } from '@/lib/data'
@@ -21,9 +30,6 @@ export function FloatingOrder() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastY])
 
-  // Glovo button hidden — return null to re-enable, remove this line
-  return null
-
   return (
     <AnimatePresence>
       {visible && (
@@ -39,7 +45,6 @@ export function FloatingOrder() {
           style={{ boxShadow: '0 4px 24px rgba(254,180,40,0.5)' }}
           aria-label="Pedir en Glovo"
         >
-          {/* Pulse ring */}
           <span
             className="absolute inset-0"
             style={{
@@ -58,3 +63,4 @@ export function FloatingOrder() {
     </AnimatePresence>
   )
 }
+*/

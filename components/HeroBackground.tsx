@@ -1,145 +1,131 @@
-'use client'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-// Each floating element has: position (%), size, rotation, animation phase
-const FLOAT_ELEMENTS = [
-  // Food photo stickers
-  { type: 'photo', src: 'unnamed.webp',        x: 5,   y: 10,  w: 160, rot: -8,  phase: 0,    dur: 8  },
-  { type: 'photo', src: 'unnamed (1).webp',    x: 78,  y: 8,   w: 140, rot: 6,   phase: 1.5,  dur: 9  },
-  { type: 'photo', src: 'unnamed (2).webp',    x: 62,  y: 55,  w: 130, rot: -4,  phase: 2.5,  dur: 7  },
-  { type: 'photo', src: 'unnamed (3).webp',    x: 2,   y: 52,  w: 120, rot: 5,   phase: 3,    dur: 10 },
-  { type: 'photo', src: '2025-11-05.webp',     x: 82,  y: 60,  w: 150, rot: -7,  phase: 0.8,  dur: 8  },
-  { type: 'photo', src: 'unnamed (4).webp',    x: 40,  y: 70,  w: 110, rot: 9,   phase: 2,    dur: 11 },
-  { type: 'photo', src: '2025-12-14.webp',     x: 20,  y: 68,  w: 125, rot: -3,  phase: 4,    dur: 9  },
-  // Brand poster stickers (paste-up style)
-  { type: 'sticker', src: '3.png',             x: 88,  y: 5,   w: 80,  rot: 8,   phase: 0.3,  dur: 11 },
-  { type: 'sticker', src: '5.png',             x: -2,  y: 60,  w: 75,  rot: -12, phase: 2.8,  dur: 9  },
-  { type: 'sticker', src: '6.png',             x: 68,  y: 70,  w: 85,  rot: 5,   phase: 1.4,  dur: 10 },
-  { type: 'sticker', src: '1.png',             x: 46,  y: 3,   w: 72,  rot: -7,  phase: 3.2,  dur: 12 },
-  // Badge/stamp SVG stickers
-  { type: 'badge', label: 'EST.\n2025',        x: 88,  y: 28,  w: 90,  rot: 12,  phase: 1,    dur: 12 },
-  { type: 'badge', label: 'NAPOLI',            x: 50,  y: 4,   w: 80,  rot: -6,  phase: 2.2,  dur: 10 },
-  { type: 'badge', label: 'MURCIA',            x: 14,  y: 82,  w: 70,  rot: 8,   phase: 0.5,  dur: 9  },
-  // Text stickers
-  { type: 'text',  label: 'GOD SAVES\nPIZZA', x: 72,  y: 78,  w: 100, rot: -11, phase: 3.5,  dur: 8  },
-  { type: 'text',  label: 'VENI VIDI\nY COMI', x: 0,  y: 30,  w: 110, rot: 6,   phase: 1.2,  dur: 11 },
-  // Paint splash decorations
-  { type: 'splash', x: 55,  y: 20,  w: 120, rot: 0,   phase: 0,    dur: 15 },
-  { type: 'splash', x: 30,  y: 85,  w: 90,  rot: 45,  phase: 2,    dur: 13 },
-] as const
-
-type FloatElement = (typeof FLOAT_ELEMENTS)[number]
-
-// Floating animation: each element bobs up/down with slight rotation, looping forever
-function FloatAnim({ phase, duration, children }: { phase: number; duration: number; children: React.ReactNode }) {
-  return (
-    <motion.div
-      animate={{
-        y: [0, -12, 0, -6, 0],
-        rotate: [0, 1, 0, -1, 0],
-      }}
-      transition={{
-        duration,
-        delay: phase,
-        repeat: Infinity,
-        repeatType: 'loop',
-        ease: 'easeInOut',
-      }}
-    >
-      {children}
-    </motion.div>
-  )
+// ─────────────────────────────────────────────────────────────────────────────
+// POSTER WALL — large-format panels wheat-pasted to the wall (static, no float)
+// ─────────────────────────────────────────────────────────────────────────────
+interface PosterPanel {
+  src: string
+  posStyle: React.CSSProperties
+  overlay: string
+  label?: { lines: string[]; size?: string; rotation?: string }
+  tape?: 'top' | 'left' | 'bottom'
+  mobileHide?: boolean
 }
 
-// A polaroid photo sticker
-function PhotoSticker({ src, width, rotation }: { src: string; width: number; rotation: number }) {
-  return (
-    <div
-      style={{
-        transform: `rotate(${rotation}deg)`,
-        background: 'white',
-        padding: '6px 6px 22px 6px',
-        boxShadow: '3px 4px 16px rgba(0,0,0,0.45)',
-        width,
-        opacity: 0.82,
-      }}
-    >
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '1/1', overflow: 'hidden' }}>
-        <Image src={`/images/${src}`} alt="Bocato di Roma" fill style={{ objectFit: 'cover' }} sizes="160px" />
-      </div>
-    </div>
-  )
+const POSTER_PANELS: PosterPanel[] = [
+  // ── Left — tall, deep-red tinted, with brand label at bottom
+  {
+    src: '/images/unnamed (6).webp',
+    posStyle: { left: '-4%', top: '-8%', width: '47%', height: '92%', transform: 'rotate(-2.5deg)', zIndex: 2 },
+    overlay: 'rgba(159,20,41,0.14)',
+    label: { lines: ['BOCATO', 'DI ROMA'], size: 'clamp(22px,3.5vw,44px)', rotation: '0deg' },
+    tape: 'top',
+    mobileHide: false,
+  },
+  // ── Center — amber-tinted (desktop only)
+  {
+    src: '/images/unnamed (5).webp',
+    posStyle: { left: '36%', top: '-14%', width: '35%', height: '82%', transform: 'rotate(1.8deg)', zIndex: 1 },
+    overlay: 'rgba(254,180,40,0.18)',
+    tape: 'top',
+    mobileHide: true,
+  },
+  // ── Right — dark-maroon tinted, ghost "AUTENTICO" watermark
+  {
+    src: '/images/unnamed (2).webp',
+    posStyle: { right: '-3%', top: '-4%', width: '38%', height: '80%', transform: 'rotate(2.8deg)', zIndex: 2 },
+    overlay: 'rgba(54,30,30,0.32)',
+    label: { lines: ['AUTENTICO'], size: 'clamp(28px,6vw,72px)', rotation: '-8deg' },
+    tape: 'left',
+    mobileHide: false,
+  },
+]
+
+// Masking-tape strip on each poster
+function Tape({ position }: { position: 'top' | 'left' | 'bottom' }) {
+  const base: React.CSSProperties = {
+    position: 'absolute',
+    width: 62,
+    height: 20,
+    background: 'rgba(254,180,40,0.30)',
+    backdropFilter: 'blur(2px)',
+    clipPath: 'polygon(4% 0%, 96% 1%, 100% 50%, 96% 100%, 4% 100%, 0% 50%)',
+    zIndex: 5,
+  }
+  const pos: React.CSSProperties =
+    position === 'top'
+      ? { top: -9, left: '50%', transform: 'translateX(-50%) rotate(-0.5deg)' }
+      : position === 'left'
+      ? { top: 22, left: -9, transform: 'rotate(90deg)' }
+      : { bottom: -9, left: '50%', transform: 'translateX(-50%) rotate(0.5deg)' }
+  return <div style={{ ...base, ...pos }} />
 }
 
-// Circular stamp/seal badge
+// ─────────────────────────────────────────────────────────────────────────────
+// BRAND STICKER FLOATERS — kept for personality (badges, text, paste-ups)
+// ─────────────────────────────────────────────────────────────────────────────
+type StickerEl =
+  | { type: 'badge';   label: string; x: string; y: string; w: number; rot: number; phase: number; dur: number}
+  | { type: 'text';    label: string; x: string; y: string; w: number; rot: number; phase: number; dur: number}
+  | { type: 'sticker'; src: string;   x: string; y: string; w: number; rot: number; phase: number; dur: number}
+  | { type: 'splash';                 x: string; y: string; w: number; rot: number; phase: number; dur: number}
+
+const STICKERS: StickerEl[] = [
+  { type: 'badge',   label: 'EST.\n2025',         x: '88%', y: '28%', w: 164, rot:  12, phase: 1,   dur: 12 },
+  { type: 'badge',   label: 'ROMA',               x: '50%', y: '4%',  w: 141, rot:  -6, phase: 2.2, dur: 10 },
+  { type: 'text',    label: 'GOD SAVES\nBOCATO',  x: '72%', y: '76%', w: 200, rot: -11, phase: 3.5, dur:  8 },
+  { type: 'text',    label: 'VENI VIDI\nY COMÍ',  x:  '1%', y: '30%', w: 200, rot:   6, phase: 1.2, dur: 11 },
+  { type: 'sticker', src: '3.png',                 x: '88%', y:  '5%', w: 146, rot:   8, phase: 0.3, dur: 11 },
+  { type: 'sticker', src: '1.png',                 x: '46%', y:  '3%', w: 132, rot:  -7, phase: 3.2, dur: 12 },
+  { type: 'splash',                                x: '55%', y: '20%', w: 218, rot:   0, phase:   0, dur: 15 },
+]
+
+const MOBILE_HIDE_STICKERS = new Set([1, 2, 5, 6])
+
+
 function BadgeSticker({ label, width, rotation }: { label: string; width: number; rotation: number }) {
   const lines = label.split('\n')
   return (
-    <div style={{ transform: `rotate(${rotation}deg)`, width, height: width, opacity: 0.75 }}>
+    <div style={{ transform: `rotate(${rotation}deg)`, width, height: width, opacity: 0.95 }}>
       <svg viewBox="0 0 100 100" width={width} height={width} xmlns="http://www.w3.org/2000/svg">
-        {/* Outer circle with dashed border */}
         <circle cx="50" cy="50" r="46" fill="none" stroke="#FEB428" strokeWidth="2.5" strokeDasharray="4 3" />
-        {/* Inner circle */}
         <circle cx="50" cy="50" r="38" fill="#9F1429" stroke="#FEB428" strokeWidth="1.5" />
-        {/* Stars at top */}
         <text x="50" y="22" textAnchor="middle" fill="#FEB428" fontSize="8" fontWeight="bold">★ ★ ★</text>
-        {/* Main text */}
         {lines.map((line, i) => (
           <text key={i} x="50" y={lines.length === 1 ? 56 : 48 + i * 14}
             textAnchor="middle" fill="#FEB428" fontSize={lines.length === 1 ? 16 : 14}
             fontWeight="900" fontFamily="sans-serif" letterSpacing="1"
           >{line}</text>
         ))}
-        {/* Bottom text */}
         <text x="50" y="80" textAnchor="middle" fill="#FEB428" fontSize="7" fontFamily="sans-serif" letterSpacing="2">MURCIA</text>
       </svg>
     </div>
   )
 }
 
-// Sticker label (rectangular, like a price tag or sticker)
 function TextSticker({ label, width, rotation }: { label: string; width: number; rotation: number }) {
   const lines = label.split('\n')
   return (
-    <div
-      style={{
-        transform: `rotate(${rotation}deg)`,
-        background: '#FEB428',
-        border: '2px solid #361E1E',
-        padding: '6px 10px',
-        width,
-        opacity: 0.8,
-        boxShadow: '2px 3px 10px rgba(0,0,0,0.4)',
-      }}
-    >
+    <div style={{
+      transform: `rotate(${rotation}deg)`,
+      background: '#FEB428', border: '2px solid #361E1E',
+      padding: '6px 10px', width, opacity: 1,
+      boxShadow: '2px 3px 10px rgba(0,0,0,0.45)',
+    }}>
       {lines.map((line, i) => (
         <div key={i} style={{
-          color: '#361E1E',
-          fontSize: 11,
-          fontWeight: 900,
-          textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          lineHeight: 1.2,
-          textAlign: 'center',
-          fontFamily: 'sans-serif',
+          color: '#361E1E', fontSize: 11, fontWeight: 900,
+          textTransform: 'uppercase', letterSpacing: '0.1em',
+          lineHeight: 1.2, textAlign: 'center', fontFamily: 'sans-serif',
         }}>{line}</div>
       ))}
     </div>
   )
 }
 
-// Brand poster sticker (paste-up style)
 function StickerPNG({ src, width, rotation }: { src: string; width: number; rotation: number }) {
   return (
-    <div
-      style={{
-        transform: `rotate(${rotation}deg)`,
-        width,
-        opacity: 0.78,
-        boxShadow: '2px 4px 18px rgba(0,0,0,0.5)',
-      }}
-    >
+    <div style={{ transform: `rotate(${rotation}deg)`, width, opacity: 1, boxShadow: '2px 4px 18px rgba(0,0,0,0.5)' }}>
       <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4', overflow: 'hidden' }}>
         <Image src={`/stickers/${src}`} alt="Bocato di Roma sticker" fill style={{ objectFit: 'cover' }} sizes="100px" />
       </div>
@@ -147,14 +133,13 @@ function StickerPNG({ src, width, rotation }: { src: string; width: number; rota
   )
 }
 
-// Paint splash SVG
 function PaintSplash({ width, rotation }: { width: number; rotation: number }) {
   return (
-    <div style={{ transform: `rotate(${rotation}deg)`, opacity: 0.25, width }}>
+    <div style={{ transform: `rotate(${rotation}deg)`, opacity: 0.45, width }}>
       <svg viewBox="0 0 120 120" width={width} height={width} xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10 C40 5, 15 25, 20 50 C25 75, 50 90, 60 110 C70 90, 95 75, 100 50 C105 25, 80 5, 60 10Z" fill="#FEB428" />
+        <path d="M60 10 C40 5,15 25,20 50 C25 75,50 90,60 110 C70 90,95 75,100 50 C105 25,80 5,60 10Z" fill="#FEB428" />
         <circle cx="35" cy="35" r="12" fill="#FEB428" />
-        <circle cx="85" cy="40" r="8" fill="#FEB428" />
+        <circle cx="85" cy="40" r="8"  fill="#FEB428" />
         <circle cx="45" cy="85" r="10" fill="#FEB428" />
         <ellipse cx="70" cy="75" rx="7" ry="12" fill="#FEB428" transform="rotate(-20 70 75)" />
       </svg>
@@ -162,43 +147,115 @@ function PaintSplash({ width, rotation }: { width: number; rotation: number }) {
   )
 }
 
-function renderElement(el: FloatElement) {
-  if (el.type === 'photo') {
-    return <PhotoSticker src={el.src} width={el.w} rotation={el.rot} />
-  }
-  if (el.type === 'sticker') {
-    return <StickerPNG src={el.src} width={el.w} rotation={el.rot} />
-  }
-  if (el.type === 'badge') {
-    return <BadgeSticker label={el.label} width={el.w} rotation={el.rot} />
-  }
-  if (el.type === 'text') {
-    return <TextSticker label={el.label} width={el.w} rotation={el.rot} />
-  }
-  // splash
-  return <PaintSplash width={el.w} rotation={el.rot} />
+function renderSticker(el: StickerEl) {
+  if (el.type === 'badge')   return <BadgeSticker  label={el.label} width={el.w} rotation={el.rot} />
+  if (el.type === 'text')    return <TextSticker   label={el.label} width={el.w} rotation={el.rot} />
+  if (el.type === 'sticker') return <StickerPNG    src={el.src}     width={el.w} rotation={el.rot} />
+  return                            <PaintSplash                     width={el.w} rotation={el.rot} />
 }
 
-// Indices of elements that cluster at the bottom-centre on small screens
-const MOBILE_HIDE_INDICES = new Set([5, 6, 9, 13, 14, 17])
-
+// ─────────────────────────────────────────────────────────────────────────────
 export function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true" style={{ zIndex: 1 }}>
-      {FLOAT_ELEMENTS.map((el, i) => (
+
+      {/* ── Base: the actual Bocato di Roma vintage Italian poster wall photo ── */}
+      <div className="absolute inset-0" style={{ zIndex: 0 }}>
+        {/* Mobile */}
+        <Image
+          src="/poster-wall-mobile.jpg"
+          alt=""
+          fill
+          className="object-cover object-center md:hidden"
+          sizes="100vw"
+          loading="lazy"
+        />
+        {/* Desktop */}
+        <Image
+          src="/poster-wall.jpg"
+          alt=""
+          fill
+          className="object-cover object-top hidden md:block"
+          sizes="100vw"
+          loading="lazy"
+        />
+      </div>
+
+      {/* ── Large-format poster panels pasted over the wall ── */}
+      {POSTER_PANELS.map((panel, i) => (
         <div
           key={i}
-          className={`absolute${MOBILE_HIDE_INDICES.has(i) ? ' hidden md:block' : ''}`}
-          style={{
-            left: `${el.x}%`,
-            top: `${el.y}%`,
+          className={panel.mobileHide ? 'hidden md:block' : ''}
+          style={{ position: 'absolute', overflow: 'hidden', ...panel.posStyle,
+            boxShadow: '6px 8px 28px rgba(0,0,0,0.65), 2px 3px 8px rgba(0,0,0,0.4)',
           }}
         >
-          <FloatAnim phase={el.phase} duration={el.dur}>
-            {renderElement(el)}
-          </FloatAnim>
+          {/* Photo */}
+          <Image
+            src={panel.src}
+            alt=""
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="50vw"
+          />
+          {/* Colour-grade overlay */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: panel.overlay,
+            mixBlendMode: 'multiply',
+          }} />
+          {/* Grain texture */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E\")",
+            opacity: 0.08,
+            pointerEvents: 'none',
+          }} />
+          {/* Brand label */}
+          {panel.label && (
+            <div style={{
+              position: 'absolute',
+              ...(panel.label.lines.length > 1 && panel.label.rotation === '0deg'
+                ? { bottom: 0, left: 0, right: 0, padding: '1.25rem 1rem',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)' }
+                : { top: 10, left: 10, right: 10 }),
+              zIndex: 4,
+            }}>
+              {panel.label.lines.map((line, li) => (
+                <div key={li} style={{
+                  fontFamily: 'sans-serif',
+                  color: panel.label!.lines.length > 1 ? '#FEB428' : 'rgba(254,180,40,0.22)',
+                  fontSize: panel.label!.size ?? '2rem',
+                  fontWeight: 900,
+                  textTransform: 'uppercase',
+                  lineHeight: 1,
+                  letterSpacing: '-0.03em',
+                  transform: `rotate(${panel.label!.rotation ?? '0deg'})`,
+                }}>{line}</div>
+              ))}
+            </div>
+          )}
+          {/* Tape strip */}
+          {panel.tape && <Tape position={panel.tape} />}
         </div>
       ))}
+
+      {/* ── Brand stickers (static) ── */}
+      {STICKERS.map((el, i) => (
+        <div
+          key={i}
+          className={`absolute${MOBILE_HIDE_STICKERS.has(i) ? ' hidden md:block' : ''}`}
+          style={{ left: el.x, top: el.y, zIndex: 8 }}
+        >
+          {renderSticker(el)}
+        </div>
+      ))}
+
+      {/* ── Global readability darkening (gradient, not flat) ── */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 9,
+        background: 'linear-gradient(158deg, rgba(8,3,1,0.32) 0%, rgba(8,3,1,0.14) 38%, rgba(8,3,1,0.20) 62%, rgba(8,3,1,0.40) 100%)',
+      }} />
     </div>
   )
 }

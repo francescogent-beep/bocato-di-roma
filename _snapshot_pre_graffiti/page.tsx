@@ -9,7 +9,6 @@ import { Marquee } from '@/components/Marquee'
 import { HeroContent } from '@/components/HeroContent'
 import { StampSeal, ItalianBadge, VintageArrow, PaintDrip } from '@/components/Stickers'
 import { bocatos, reviews, foodImages } from '@/lib/data'
-import { ImageParallax } from '@/components/ImageParallax'
 import { getWebSiteSchema, getFAQSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -31,8 +30,6 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema()) }}
       />
-
-      <ImageParallax />
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────────── */}
       <HeroContent />
@@ -56,26 +53,16 @@ export default function HomePage() {
 
       {/* ─── BOCATO DEL MES — featured section ─────────────────────────── */}
       <FadeUp delay={0.1}>
-        <section className="bg-[#FAF3E5] py-16 px-6 relative paper-spots overflow-hidden" aria-labelledby="bdm-heading">
-
-          {/* Sticker background decoration — desktop */}
-          <div aria-hidden="true" className="hidden md:block" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-70px', right: '-60px' }}>
-            <img src="/stickers/3.svg" alt="" style={{ display: 'block', width: 680, opacity: 0.16, transform: 'rotate(18deg)' }} />
-          </div>
-          {/* Sticker background decoration — mobile */}
-          <div aria-hidden="true" className="block md:hidden" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-20px', right: '-30px' }}>
-            <img src="/stickers/3.svg" alt="" style={{ display: 'block', width: 280, opacity: 0.16, transform: 'rotate(18deg)' }} />
-          </div>
+        <section className="bg-[#FAF3E5] py-16 px-6 relative paper-spots" aria-labelledby="bdm-heading">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
               {/* Image — manifesto only */}
               <div className="relative">
-                <div data-parallax="true" className="relative h-80 md:h-[460px] overflow-hidden" style={{ transform: 'rotate(-1.5deg)' }}>
+                <div className="relative h-80 md:h-[460px] overflow-hidden" style={{ transform: 'rotate(-1.5deg)' }}>
                   <Image
-                    src="/images/arancia-bocato.svg"
+                    src="/images/arancia-bocato.png"
                     alt="Bocato del Mes — Arancia in Vespa"
-                    unoptimized
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -102,7 +89,7 @@ export default function HomePage() {
                 </p>
                 <h2
                   id="bdm-heading"
-                  className="font-graffiti text-[#361E1E] text-3xl md:text-5xl mb-4 leading-none"
+                  className="font-stencil text-[#361E1E] text-3xl md:text-5xl mb-4 leading-none"
                 >
                   ARANCIA<br />IN VESPA
                 </h2>
@@ -139,6 +126,14 @@ export default function HomePage() {
           <PaintDrip color="#FEB428" className="w-full h-12" />
         </div>
 
+        {/* Brand sticker — bottom left paste-up */}
+        <div
+          className="absolute bottom-4 left-3 z-10 hidden md:block pointer-events-none"
+          style={{ transform: 'rotate(-8deg)', opacity: 0.7 }}
+          aria-hidden="true"
+        >
+          <Image src="/stickers/2.png" alt="" width={70} height={93} className="object-cover" />
+        </div>
 
         {/* Artesanal stamp — top right */}
         <div
@@ -154,7 +149,7 @@ export default function HomePage() {
             <div className="text-center mb-10">
               <h2
                 id="carta-heading"
-                className="font-graffiti text-[#FEB428] text-4xl md:text-6xl mb-2"
+                className="font-stencil text-[#FEB428] text-4xl md:text-6xl mb-2"
                 style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.5)' }}
               >
                 LA CARTA
@@ -204,16 +199,7 @@ export default function HomePage() {
 
       {/* ─── 4. MASA SECTION ─────────────────────────────────────────────── */}
       <FadeUp delay={0.1}>
-        <section className="bg-[#F4E6CE] py-16 px-6 relative paper-spots overflow-hidden" aria-labelledby="bocato-heading">
-
-          {/* Sticker background decoration — desktop */}
-          <div aria-hidden="true" className="hidden md:block" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', top: '-50px', right: '-70px' }}>
-            <img src="/stickers/1.svg" alt="" style={{ display: 'block', width: 620, opacity: 0.16, transform: 'rotate(-22deg)' }} />
-          </div>
-          {/* Sticker background decoration — mobile */}
-          <div aria-hidden="true" className="block md:hidden" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', top: '-15px', right: '-25px' }}>
-            <img src="/stickers/1.svg" alt="" style={{ display: 'block', width: 260, opacity: 0.16, transform: 'rotate(-22deg)' }} />
-          </div>
+        <section className="bg-[#F4E6CE] py-16 px-6 relative paper-spots" aria-labelledby="bocato-heading">
           <div className="max-w-5xl mx-auto">
             <StencilBorder color="#9F1429" className="p-6 md:p-10 relative">
 
@@ -234,7 +220,7 @@ export default function HomePage() {
                   </p>
                   <h2
                     id="bocato-heading"
-                    className="font-graffiti text-[#361E1E] text-3xl md:text-4xl mb-4 leading-tight"
+                    className="font-stencil text-[#361E1E] text-3xl md:text-4xl mb-4 leading-tight"
                   >
                     MASA FERMENTADA<br />MÍNIMO 72H
                   </h2>
@@ -266,7 +252,6 @@ export default function HomePage() {
 
                   {/* Main: masa photo */}
                   <div
-                    data-parallax="true"
                     className="relative h-72 md:h-96 overflow-hidden"
                     style={{ transform: 'rotate(-1deg)' }}
                   >
@@ -312,19 +297,27 @@ export default function HomePage() {
             aria-hidden="true"
           >
             <span
-              className="font-graffiti text-white text-hollow whitespace-nowrap"
+              className="font-stencil text-white/5 whitespace-nowrap"
               style={{ fontSize: 'clamp(6rem, 20vw, 18rem)', letterSpacing: '0.05em' }}
             >
               ROMA
             </span>
           </div>
 
+          {/* Brand sticker paste-up — bottom right */}
+          <div
+            className="absolute bottom-6 right-3 z-20 hidden md:block pointer-events-none"
+            style={{ transform: 'rotate(10deg)', opacity: 0.72 }}
+            aria-hidden="true"
+          >
+            <Image src="/stickers/5.png" alt="" width={68} height={91} className="object-cover" />
+          </div>
 
           <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left: image */}
-            <div data-parallax="true" className="relative h-72 md:h-96 overflow-hidden" style={{ transform: 'rotate(-1.5deg)' }}>
+            <div className="relative h-72 md:h-96 overflow-hidden" style={{ transform: 'rotate(-1.5deg)' }}>
               <Image
-                src="/images/unnamed (3).webp"
+                src="/images/unnamed (4).webp"
                 alt="El equipo de Bocato di Roma en Murcia"
                 fill
                 className="object-cover"
@@ -351,7 +344,7 @@ export default function HomePage() {
               </p>
               <h2
                 id="nosotros-heading"
-                className="font-graffiti text-white text-3xl md:text-4xl mb-4 leading-tight"
+                className="font-stencil text-white text-3xl md:text-4xl mb-4 leading-tight"
               >
                 DE LAS CALLES DEL<br />TRASTEVERE A MURCIA
               </h2>
@@ -380,21 +373,20 @@ export default function HomePage() {
 
       {/* ─── 6. REVIEWS ──────────────────────────────────────────────────── */}
       <FadeUp delay={0.1}>
-        <section className="bg-[#F4E6CE] py-16 px-6 relative overflow-hidden" aria-labelledby="reviews-heading">
-
-          {/* Sticker background decoration — desktop */}
-          <div aria-hidden="true" className="hidden md:block" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-50px', left: '-55px' }}>
-            <img src="/stickers/6.png" alt="" style={{ display: 'block', width: 600, opacity: 0.17, transform: 'rotate(-12deg)' }} />
-          </div>
-          {/* Sticker background decoration — mobile */}
-          <div aria-hidden="true" className="block md:hidden" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-15px', left: '-30px' }}>
-            <img src="/stickers/6.png" alt="" style={{ display: 'block', width: 260, opacity: 0.17, transform: 'rotate(-12deg)' }} />
+        <section className="bg-[#F4E6CE] py-16 px-6 relative" aria-labelledby="reviews-heading">
+          {/* Brand sticker paste-up — top right corner */}
+          <div
+            className="absolute top-4 right-2 z-10 hidden md:block pointer-events-none"
+            style={{ transform: 'rotate(7deg)', opacity: 0.65 }}
+            aria-hidden="true"
+          >
+            <Image src="/stickers/4.png" alt="" width={75} height={100} className="object-cover" />
           </div>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <h2
                 id="reviews-heading"
-                className="font-graffiti text-[#9F1429] text-4xl md:text-5xl mb-2"
+                className="font-stencil text-[#9F1429] text-4xl md:text-5xl mb-2"
               >
                 LO QUE DICEN
               </h2>
@@ -436,13 +428,21 @@ export default function HomePage() {
           className="bg-[#361E1E] py-16 px-6 texture-noise relative overflow-hidden"
           aria-labelledby="gallery-heading"
         >
+          {/* Brand sticker paste-up — top left */}
+          <div
+            className="absolute top-3 left-2 z-10 hidden md:block pointer-events-none"
+            style={{ transform: 'rotate(-9deg)', opacity: 0.68 }}
+            aria-hidden="true"
+          >
+            <Image src="/stickers/6.png" alt="" width={65} height={87} className="object-cover" />
+          </div>
 
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <p className="text-[#9F1429] uppercase tracking-[0.3em] text-xs font-bold mb-2">Fotogalería</p>
               <h2
                 id="gallery-heading"
-                className="font-graffiti text-[#FEB428] text-4xl md:text-5xl mb-2"
+                className="font-stencil text-[#FEB428] text-4xl md:text-5xl mb-2"
                 style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.5)' }}
               >
                 SCATTI DI STRADA
@@ -522,7 +522,7 @@ export default function HomePage() {
             <div className="text-center mb-10">
               <h2
                 id="location-heading"
-                className="font-graffiti text-[#9F1429] leading-none mb-4"
+                className="font-stencil text-[#9F1429] leading-none mb-4"
                 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', textShadow: '2px 2px 0px rgba(0,0,0,0.15)' }}
               >
                 ACHO CHE BELLO
@@ -576,24 +576,15 @@ export default function HomePage() {
       {/* ─── 9. FAQS ─────────────────────────────────────────────────────── */}
       <FadeUp delay={0.1}>
         <section
-          className="bg-[#F4E6CE] py-16 px-6 paper-spots relative overflow-hidden"
+          className="bg-[#F4E6CE] py-16 px-6 paper-spots relative"
           aria-labelledby="faq-heading"
         >
-
-          {/* Sticker background decoration — desktop */}
-          <div aria-hidden="true" className="hidden md:block" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', top: '-40px', right: '-65px' }}>
-            <img src="/stickers/4.svg" alt="" style={{ display: 'block', width: 580, opacity: 0.16, transform: 'rotate(15deg)' }} />
-          </div>
-          {/* Sticker background decoration — mobile */}
-          <div aria-hidden="true" className="block md:hidden" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', top: '-10px', right: '-25px' }}>
-            <img src="/stickers/4.svg" alt="" style={{ display: 'block', width: 240, opacity: 0.16, transform: 'rotate(15deg)' }} />
-          </div>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <p className="text-[#9F1429] uppercase tracking-[0.3em] text-xs font-bold mb-2">FAQ</p>
               <h2
                 id="faq-heading"
-                className="font-graffiti text-[#361E1E] text-4xl md:text-5xl mb-2"
+                className="font-stencil text-[#361E1E] text-4xl md:text-5xl mb-2"
               >
                 PREGUNTATE
               </h2>
@@ -653,24 +644,6 @@ export default function HomePage() {
           <div className="checker-tape mt-12" />
         </section>
       </FadeUp>
-
-      {/* ─── 10. CERDO ───────────────────────────────────────────────────── */}
-      <section className="bg-[#361E1E] relative overflow-hidden" style={{ minHeight: '60vw' }}>
-        <img
-          src="/stickers/cerdo.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            objectPosition: 'center',
-            pointerEvents: 'none',
-          }}
-        />
-      </section>
     </>
   )
 }

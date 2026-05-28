@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { GLOVO_URL } from '@/lib/data'
+// import { GLOVO_URL } from '@/lib/data' // re-enable when Glovo goes live
 
 export function Footer() {
   return (

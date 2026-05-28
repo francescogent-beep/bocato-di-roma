@@ -13,23 +13,23 @@ export const metadata: Metadata = {
 }
 
 const imageCaptions = [
-  'Bocato Romano',
-  'Hecho al Momento',
-  'Ingredientes DOP',
-  'Masa Fermentada Mínimo 72h',
-  'Street Food Italiano',
+  'Imperfecto',
+  'Carbonara',
+  'Tartufato',
+  'Cicciolina',
+  'Polpette',
+  'Diavolo',
+  'El Capitano',
+  'Sorrento',
+  'Emperifollá',
+  'Arancini',
   'Bocato di Roma',
-  'Sabor de Italia',
-  'Fresco · Artesanal',
-  'Con Mucho Amor',
-  'Murcia x Nápoles',
-  'Bocato Perfecto',
-  'God Saves Pizza',
-  'Que Ricotta Mami',
+  'Acho que bello',
+  'Que ricotta mami',
+  'Bocato di Roma',
   'Veni Vidi y Comí',
-  'Acho che Bello',
-  'Imperfecto · Perfecto',
-  'El Sabor de Siempre',
+  'Street Food Italiano',
+  'Acho que bello',
 ]
 
 const rotations = [
@@ -104,7 +104,7 @@ export default function GaleriaPage() {
           ¿TE APETECE UNO?
         </h2>
         <p className="text-white/80 uppercase tracking-widest text-sm mb-6">
-          Ven a probarlo o pídelo por Glovo
+          Ven a probarlo — Gran Vía Alfonso X, 2-A · Murcia
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -112,14 +112,6 @@ export default function GaleriaPage() {
             className="bg-[#F4E6CE] text-[#361E1E] font-bold uppercase tracking-widest px-8 py-3 text-sm hover:bg-white transition-colors"
           >
             Cómo Llegar
-          </a>
-          <a
-            href="https://glovoapp.com/es/es/murcia/stores/bocato-di-roma-murcia?content=menu-c.2958601997&section=bocatos-s.6285422442"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#FEB428] text-[#361E1E] font-bold uppercase tracking-widest px-8 py-3 text-sm hover:bg-white transition-colors"
-          >
-            Pedir en Glovo
           </a>
         </div>
         <div className="checker-tape mt-8" />

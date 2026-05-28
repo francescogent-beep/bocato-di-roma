@@ -178,7 +178,7 @@ export default function NosotrosPage() {
                     id="story-heading"
                     className="font-stencil text-[#361E1E] text-3xl md:text-4xl mb-4 leading-tight"
                   >
-                    DE LAS CALLES<br />DE NÁPOLES<br />A GRAN VÍA
+                    DE LAS CALLES<br />DEL TRASTEVERE<br />A GRAN VÍA
                   </h2>
                   <div className="checker-tape mb-6" />
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
@@ -359,6 +359,7 @@ export default function NosotrosPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {foodImages.slice(2, 10).map((img, i) => {
                 const rotations = [-2, 1, -1.5, 2, -2.5, 1.5, -1, 2.5]
+                const captions = ['Tartufato', 'Cicciolina', 'Polpette', 'Diavolo', 'El Capitano', 'Sorrento', 'Emperifollá', 'Arancini']
                 return (
                   <div
                     key={img}
@@ -368,12 +369,15 @@ export default function NosotrosPage() {
                     <div className="relative h-32 md:h-40 overflow-hidden">
                       <Image
                         src={`/images/${img}`}
-                        alt={`Bocato di Roma — imagen del local ${i + 1}`}
+                        alt={`Bocato di Roma — ${captions[i]}`}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 50vw, 25vw"
                       />
                     </div>
+                    <p className="text-[#361E1E] text-center text-[10px] font-bold uppercase tracking-wider mt-1 opacity-60 leading-tight">
+                      {captions[i]}
+                    </p>
                   </div>
                 )
               })}
