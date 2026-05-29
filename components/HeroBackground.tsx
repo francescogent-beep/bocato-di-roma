@@ -81,7 +81,7 @@ const STICKERS: StickerEl[] = [
   { type: 'splash',                                x: '55%', y: '20%', w: 218, rot:   0, phase:   0, dur: 15 },
 ]
 
-const MOBILE_HIDE_STICKERS = new Set([1, 2, 5, 6])
+const MOBILE_HIDE_STICKERS = new Set([1, 2, 3, 4, 5, 6])
 
 
 function BadgeSticker({ label, width, rotation }: { label: string; width: number; rotation: number }) {
@@ -254,7 +254,7 @@ export function HeroBackground() {
       {/* ── Global readability darkening (gradient, not flat) ── */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 9,
-        background: 'linear-gradient(158deg, rgba(8,3,1,0.32) 0%, rgba(8,3,1,0.14) 38%, rgba(8,3,1,0.20) 62%, rgba(8,3,1,0.40) 100%)',
+        background: 'linear-gradient(158deg, rgba(8,3,1,0.50) 0%, rgba(8,3,1,0.28) 38%, rgba(8,3,1,0.35) 62%, rgba(8,3,1,0.58) 100%)',
       }} />
     </div>
   )
