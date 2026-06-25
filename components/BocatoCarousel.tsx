@@ -3,15 +3,15 @@ import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 const SLIDES = [
-  { name: 'Imperfecto',  src: '/images/imperfecto.png'  },
-  { name: 'Carbonara',   src: '/images/carbonara.png'   },
-  { name: 'Tartufato',   src: '/images/tartufato.png'   },
-  { name: 'Cicciolina',  src: '/images/cicciolina.png'  },
-  { name: 'Polpette',    src: '/images/polpette.png'    },
-  { name: 'Diavolo',     src: '/images/diavolo.png'     },
-  { name: 'Capitano',    src: '/images/capitano.png'    },
-  { name: 'Sorrento',    src: '/images/sorrento.png'    },
-  { name: 'Emperifollá', src: '/images/emperifolla.png' },
+  { name: 'Imperfecto',  src: '/images/imperfecto.webp'  },
+  { name: 'Carbonara',   src: '/images/carbonara.webp'   },
+  { name: 'Tartufato',   src: '/images/tartufato.webp'   },
+  { name: 'Cicciolina',  src: '/images/cicciolina.webp'  },
+  { name: 'Polpette',    src: '/images/polpette.webp'    },
+  { name: 'Diavolo',     src: '/images/diavolo.webp'     },
+  { name: 'Capitano',    src: '/images/capitano.webp'    },
+  { name: 'Sorrento',    src: '/images/sorrento.webp'    },
+  { name: 'Emperifollá', src: '/images/emperifolla.webp' },
 ]
 
 export function BocatoCarousel() {

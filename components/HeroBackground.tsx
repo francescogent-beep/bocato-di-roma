@@ -76,8 +76,8 @@ const STICKERS: StickerEl[] = [
   { type: 'badge',   label: 'ROMA',               x: '50%', y: '4%',  w: 141, rot:  -6, phase: 2.2, dur: 10 },
   { type: 'text',    label: 'GOD SAVES\nBOCATO',  x: '72%', y: '76%', w: 200, rot: -11, phase: 3.5, dur:  8 },
   { type: 'text',    label: 'VENI VIDI\nY COMÍ',  x:  '1%', y: '30%', w: 200, rot:   6, phase: 1.2, dur: 11 },
-  { type: 'sticker', src: '3.png',                 x: '88%', y:  '5%', w: 146, rot:   8, phase: 0.3, dur: 11 },
-  { type: 'sticker', src: '1.png',                 x: '46%', y:  '3%', w: 132, rot:  -7, phase: 3.2, dur: 12 },
+  { type: 'sticker', src: '3.webp',                x: '88%', y:  '5%', w: 146, rot:   8, phase: 0.3, dur: 11 },
+  { type: 'sticker', src: '1.webp',                x: '46%', y:  '3%', w: 132, rot:  -7, phase: 3.2, dur: 12 },
   { type: 'splash',                                x: '55%', y: '20%', w: 218, rot:   0, phase:   0, dur: 15 },
 ]
 
@@ -168,7 +168,7 @@ export function HeroBackground() {
           fill
           className="object-cover object-center md:hidden"
           sizes="100vw"
-          loading="lazy"
+          priority
         />
         {/* Desktop */}
         <Image
@@ -177,7 +177,7 @@ export function HeroBackground() {
           fill
           className="object-cover object-top hidden md:block"
           sizes="100vw"
-          loading="lazy"
+          priority
         />
       </div>
 

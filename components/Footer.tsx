@@ -122,6 +122,19 @@ export function Footer() {
         <p>© BOCATO DI ROMA MURCIA MMXXV</p>
         <p>@bocatodiroma · bocatodiroma.com</p>
       </div>
+      <div className="max-w-6xl mx-auto px-6 mt-3 flex justify-center text-[10px] text-white/25 tracking-widest uppercase">
+        <p>
+          SEO &amp; Design by{' '}
+          <a
+            href="https://fgdigitalsystems.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/50 transition-colors"
+          >
+            fgdigitalsystems.com
+          </a>
+        </p>
+      </div>
     </footer>
   )
 }
