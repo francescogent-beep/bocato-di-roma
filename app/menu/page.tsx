@@ -74,7 +74,7 @@ export default function MenuPage() {
               {category.id === 'bebidas' && (
                 <div className="flex justify-center mt-4 mb-2 -mx-6 overflow-hidden">
                   <img
-                    src="/stickers/spellegrino.png"
+                    src="/stickers/spellegrino.webp"
                     alt="San Pellegrino"
                     style={{ width: '100%', maxWidth: 480, display: 'block', objectFit: 'contain' }}
                     loading="lazy"

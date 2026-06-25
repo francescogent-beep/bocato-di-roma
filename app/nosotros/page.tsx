@@ -82,8 +82,8 @@ export default function NosotrosPage() {
           </h1>
           <div className="checker-tape mb-6 max-w-md mx-auto" />
           <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-            Una historia de bocatos, calles y productos italianos que terminó
-            en el corazón de la huerta más famosa del sur.
+            Dos catalanes en Roma sin plan. Un Mercato Centrale. Una obsesión.
+            Y tres años después, la esquina correcta en Murcia.
           </p>
         </div>
 
@@ -178,26 +178,33 @@ export default function NosotrosPage() {
                     id="story-heading"
                     className="font-stencil text-[#361E1E] text-3xl md:text-4xl mb-4 leading-tight"
                   >
-                    DE LAS CALLES<br />DEL TRASTEVERE<br />A GRAN VÍA
+                    TODO EMPEZÓ<br />CON UNAS<br />VACACIONES.
                   </h2>
                   <div className="checker-tape mb-6" />
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
-                    Todo empezó en una calle estrecha de Roma, tarde de verano, olor a pan recién horneado
-                    saliendo de un tugurio del tamaño de un baño. Ahí estaba el bocato. No en un restaurante
-                    con mantel y carta laminada — en la calle, con los dedos, de pie.
+                    Éramos dos catalanes en Roma sin ninguna intención de montar un negocio. Xavi y Verónica,
+                    de un pueblecito de Barcelona, paseando por las calles de Roma sin más plan que comer bien
+                    y perderse.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
-                    La obsesión por replicar eso fue lo que trajo Bocato di Roma a Murcia en 2025.
-                    Un local pequeño, sin artificios, donde la estrella es el producto: masa fermentada
-                    mínimo 72 horas, ingredientes italianos con denominación de origen, horno al momento.
+                    Allí descubrimos el Mercato Centrale — un punto donde confluía toda la gastronomía italiana:
+                    producto, tradición, calidad. Gente que comía de pie, sin protocolo, pero con una materia
+                    prima que aquí en España casi no existe. Nos miramos y dijimos lo que se dice en estos casos:
+                    <em className="text-[#9F1429] font-bold"> "¿Por qué esto no hay en casa?"</em>
+                  </p>
+                  <p className="text-[#361E1E]/80 text-base leading-relaxed mb-4">
+                    Primero abrimos una trattoria napoletana en Lorca, queríamos conseguir la calidez de una
+                    casa napolitana en pleno Lorca, y tres años después, seguimos intentando mejorar día tras
+                    día. La fórmula es sencilla: el mejor producto, sentirte en familia y volver a casa.
                   </p>
                   <p className="text-[#361E1E]/80 text-base leading-relaxed mb-6">
-                    Murcia puso la energía, la huerta y las ganas. Roma puso la receta, los productos
-                    y esa actitud de que la comida buena no necesita excusas.
+                    Xavi se formó como pizzero con su maestro, <strong>Michele Intrieri</strong>, un calabrés
+                    que perfeccionó su oficio en las escuelas napoletanas cerca de Roma. No hay atajos cuando
+                    aprendes así.
                   </p>
                   <div className="ornament-divider mb-4" />
                   <p className="text-[#9F1429] font-bold italic text-lg uppercase tracking-wide">
-                    "Veni Vidi y Comí"
+                    "Veni, Vidi, y abrimos."
                   </p>
                 </div>
               </div>
@@ -222,7 +229,7 @@ export default function NosotrosPage() {
             style={{ transform: 'rotate(9deg)', opacity: 0.65 }}
             aria-hidden="true"
           >
-            <Image src="/stickers/3.png" alt="" width={72} height={96} className="object-cover" />
+            <Image src="/stickers/3.webp" alt="" width={72} height={96} className="object-cover" />
           </div>
 
           <div className="max-w-5xl mx-auto">
@@ -281,7 +288,7 @@ export default function NosotrosPage() {
             style={{ transform: 'rotate(-11deg)', opacity: 0.6 }}
             aria-hidden="true"
           >
-            <Image src="/stickers/1.png" alt="" width={65} height={87} className="object-cover" />
+            <Image src="/stickers/1.webp" alt="" width={65} height={87} className="object-cover" />
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">

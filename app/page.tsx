@@ -271,7 +271,7 @@ export default function HomePage() {
                     style={{ transform: 'rotate(-1deg)' }}
                   >
                     <Image
-                      src="/images/masa.png"
+                      src="/images/masa.webp"
                       alt="Bocato di Roma — masa napolitana fermentada 72 horas"
                       fill
                       className="object-cover object-center"
@@ -353,17 +353,21 @@ export default function HomePage() {
                 id="nosotros-heading"
                 className="font-graffiti text-white text-3xl md:text-4xl mb-4 leading-tight"
               >
-                DE LAS CALLES DEL<br />TRASTEVERE A MURCIA
+                UN BOCADO DE ROMA.<br />ATERRIZÓ EN MURCIA.
               </h2>
               <div className="checker-tape mb-4" />
               <p className="text-white/80 text-base leading-relaxed mb-4">
-                Bocato di Roma nació del amor por las calles del Trastevere y la pasión por los productos
-                italianos auténticos. Cada bocato es una ventana a esas noches en las que el mejor
-                plan era parar en la esquina y comer algo brutal. Visita Italia a través de Roma — sin coger un avión.
+                Éramos dos catalanes en Roma sin ninguna intención de montar un negocio. Xavi y Verónica,
+                paseando por las calles de Roma sin más plan que comer bien y perderse. Y nos perdimos.
+                Pero de la mejor manera posible.
               </p>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Ingredientes DOP e IGP, masa fermentada mínimo 72 horas, horno a tope. Sin atajos. Sin trampa.
-                Solo producto italiano de verdad, con actitud de calle.
+              <p className="text-white/80 text-base leading-relaxed mb-4">
+                Aquí se viene a comer de verdad. Seleccionamos cada ingrediente con obsesión, respetando
+                el origen y buscando siempre ese bocado crujiente, sabroso y auténtico que te hace cerrar
+                los ojos. Si algo sale de nuestra cocina, es porque nos vuelve locos a nosotros primero.
+              </p>
+              <p className="text-[#FEB428] font-bold italic text-base mb-6 uppercase tracking-wide">
+                "Veni, Vidi, y abrimos."
               </p>
               <div className="ornament-divider mb-6" />
               <Link
@@ -384,11 +388,11 @@ export default function HomePage() {
 
           {/* Sticker background decoration — desktop */}
           <div aria-hidden="true" className="hidden md:block" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-50px', left: '-55px' }}>
-            <img src="/stickers/6.png" alt="" style={{ display: 'block', width: 600, opacity: 0.17, transform: 'rotate(-12deg)' }} />
+            <img src="/stickers/6.webp" alt="" style={{ display: 'block', width: 600, opacity: 0.17, transform: 'rotate(-12deg)' }} />
           </div>
           {/* Sticker background decoration — mobile */}
           <div aria-hidden="true" className="block md:hidden" style={{ position: 'absolute', pointerEvents: 'none', zIndex: 0, overflow: 'hidden', bottom: '-15px', left: '-30px' }}>
-            <img src="/stickers/6.png" alt="" style={{ display: 'block', width: 260, opacity: 0.17, transform: 'rotate(-12deg)' }} />
+            <img src="/stickers/6.webp" alt="" style={{ display: 'block', width: 260, opacity: 0.17, transform: 'rotate(-12deg)' }} />
           </div>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
@@ -657,7 +661,7 @@ export default function HomePage() {
       {/* ─── 10. CERDO ───────────────────────────────────────────────────── */}
       <section className="bg-[#361E1E] relative overflow-hidden" style={{ minHeight: '60vw' }}>
         <img
-          src="/stickers/cerdo.png"
+          src="/stickers/cerdo.webp"
           alt=""
           aria-hidden="true"
           style={{
